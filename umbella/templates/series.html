@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+<!-- add a big banner to welcome user -->
+
+<!-- Topic image -->
+<div id="topic-story" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ul class="carousel-indicators">
+        <li data-target="#topic-story" data-slide-to="0" class="active"></li>
+    </ul>
+
+    <div class="carousel-inner">
+        <!-- from series fateh series item -->
+        <div class="carousel-item active" style="max-height: 500px;">
+            <img class="d-block w-100" src="{{url_for('static', filename='img/'+item.image)}}" alt="Slide story image">
+            <div class="carousel-caption d-none d-lg-block">
+                <h1 class="display-4">{{item.name}}</h1>
+                <p class="lead">{{item.slogan}}</p>
+                <p class="text-small text-muted d-none d-xl-block">{{item.description}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block main %}
+<!-- marketing information -->
+<section class="series-cards">
+    <h3 class="text-center" style="user-select: none; ">the {{item.name}} Style selection</h3>
+
+    <div class="card-deck mt-3">
+        {% for umbrella in umbrellas%}
+        <article class="card">
+            <a href="{{ url_for('main.Umbrellas', umbrellaid=umbrella.id)}}">
+                <img class="card-img" src="{{url_for('static', filename='img/'+umbrella.image)}}" alt="Card image">
+                <div class="card-img-overlay text-center p-auto d-flex flex-column justify-content-end">
+                    <div class="card-body">
+                        <h4 class="card-title d-sm-none d-md-block">{{umbrella.name}}</h4>
+                        <h6 class="card-subtitle mb-2 d-sm-none d-md-none d-lg-block d-xl-block">{{umbrella.artist}}
+                        </h6>
+                        <p class="card-text d-sm-none d-md-none d-lg-none d-xl-block">{{umbrella.description[0]}}
+                        </p>
+                    </div>
+                    <div class="add d-flex justify-content-around align-items-center">
+                        <div class="price d-sm-none d-md-block">
+                            <h6 class="card-text tag">{{umbrella.price}}</h6>
+                        </div>
+                        <button type="button" class="btn btn-primary w-lg-25 btn-sm">Add to cart</button>
+                    </div>
+                </div>
+            </a>
+        </article>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
+
+
+
+

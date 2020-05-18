@@ -1,0 +1,145 @@
+{% extends 'base.html' %}
+
+
+
+{% block main %}
+<!-- each tour is a bootstrap card -->
+
+
+<div class="container-fluid  product-bg text-center">
+    <div>
+        <h6 class="w-100 text-center pt-4 text-secondary font-weight-light">{{umbrella.series.id}}-{{umbrella.id}}</h6>
+    </div>
+    <section class="row justify-content-center">
+        <article class="detail col-xl-2 col-lg-3 col-md-6 text-center">
+            <div class="detail-group mt-xl-3 mt-lg-2 mt-md-3">
+                <h6 class="text-small-title">Artist</h6>
+                <p class="text-subtle">{{umbrella.artist}}</p>
+            </div>
+            <div class="detail-group mt-xl-3 mt-lg-2 mt-md-3">
+                <h6 class="text-small-title">Pattern story</h6>
+                <p class="text-subtle">{{umbrella.description[0]}}</p>
+            </div>
+            
+        </article>
+        <div class="col-xl-6 col-lg-6">
+
+            <div id="topic-story" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ul class="carousel-indicators">
+                    <li data-target="#topic-story" data-slide-to="0" class="active"></li>
+                    <li data-target="#topic-story" data-slide-to="1"></li>
+                </ul>
+            
+                <div class="carousel-inner">
+                    
+                    <div class="carousel-item active" style="max-height: 700px;">
+                        <img class="d-block w-100" src="{{url_for('static', filename='img/'+umbrella.image)}}" alt=" Umbrella picture">
+                    </div>
+                    <div class="carousel-item" style="max-height: 700px;">
+                        <img class="d-block w-100 " src="{{url_for('static', filename='img/'+umbrella.view)}}" alt=" pattern plain view">
+                    </div>
+            
+                </div>
+            
+                <!-- Left and right controls -->
+                <a class="carousel-control-prev" href="#topic-story" data-slide="prev"></a>
+                <a class="carousel-control-next" href="#topic-story" data-slide="next"></a>
+            </div>
+
+        </div>
+        <div class="detail col-xl-2 col-lg-3 col-md-6 text-center" >
+            <div class="price-container">
+                <span class="currencyFormat align-top">A$</span>
+                <span class="itemPrice align-middle">{{umbrella.price}}</span>
+            </div>
+            <div class="itemName my-xl-5 my-md-4 py-xl-5 py-md-3 ">{{umbrella.name}}</div>
+            <div>
+                <a href="{{ url_for('main.order', umbrella_id=umbrella.id) }}" class="btn btn-secondary buy">Purchase</a>
+            </div>
+        </div>
+    </section>
+    <div>
+        <h6 class="pt-4"></h6>
+    </div>
+</div>
+
+<article class="w-75 mt-5 mx-auto text-left">
+    <table class="table table-sm" style="user-select: none;">
+        <thead >
+            <tr>
+                <th colspan="3" class="text-center">Specification</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td scope="row">Series</td>
+                <td class="text-subtle">{{umbrella.series.name}} style umbrella</td>
+            </tr>
+            <tr>
+                <td scope="row">Dimension</td>
+                <td class="text-subtle">{{umbrella.dimensions}}</td>
+            </tr>
+            <tr>
+                <td scope="row">Weight</td>
+                <td class="text-subtle">{{umbrella.weight}} g</td>
+            </tr>
+            <tr>
+                <td scope="row">Topic Colour</td>
+                    <td>
+                    <div class="color-group">
+                        <div class="colour" style="background-color: {{umbrella.color[0][0]}}">AA</div>
+                        <span class="text-subtle">{{umbrella.color[0][1]}}</span>
+                    </div>
+                    <div class="color-group">
+                        <div class="colour" style="background-color: {{umbrella.color[1][0]}}">AA</div>
+                        <span class="text-subtle">{{umbrella.color[1][1]}}</span>
+                    </div>
+                    <div class="color-group">
+                        <div class="colour" style="background-color: {{umbrella.color[2][0]}}">AA</div>
+                        <span class="text-subtle">{{umbrella.color[2][1]}}</span>
+                    </div>
+                    <div class="color-group">
+                        <div class="colour" style="background-color: {{umbrella.color[3][0]}}">AA</div>
+                        <span class="text-subtle">{{umbrella.color[3][1]}}</span>
+                    </div>
+                    <div class="color-group">
+                        <div class="colour" style="background-color: {{umbrella.color[4][0]}}">AA</div>
+                        <span class="text-subtle">{{umbrella.color[4][1]}}</span>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td scope="row">Pattern style</td>
+                <td class="text-subt">
+                    <img src="{{url_for('static', filename='img/'+umbrella.pattern)}}" alt="sample image">
+                </td>
+            </tr>
+            <tr>
+                <td scope="row">Texture</td>
+                <td class="text-subtle">{{umbrella.texture}}</td>
+            </tr>
+            <tr>
+                <td scope="row">Type</td>
+                <td class="text-subtle">{{umbrella.item_type}}</td>
+            </tr>
+            <tr>
+                <td scope="row">Featuring</td>
+                <td class="text-subtle">
+                    <ul>
+                        <li>{{umbrella.description[1]}}</li>
+                        <li>{{umbrella.description[2]}}</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="backToTop">
+        <button type="button" class="btn btn-light btn-sm" onclick="topFunction()" id="myBtn">Back to top</button>
+    </div>
+</article>
+
+
+{% endblock %}
+
+

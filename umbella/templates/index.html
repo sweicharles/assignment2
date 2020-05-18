@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<!-- add a big banner to welcome user -->
+
+<!-- Topic image -->
+<div id="topic-story" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ul class="carousel-indicators">
+        <li data-target="#topic-story" data-slide-to="0" class="active"></li>
+        <li data-target="#topic-story" data-slide-to="1"></li>
+        <li data-target="#topic-story" data-slide-to="2"></li>
+        <li data-target="#topic-story" data-slide-to="3"></li>
+        <li data-target="#topic-story" data-slide-to="4"></li>
+        <li data-target="#topic-story" data-slide-to="5"></li>
+    </ul>
+    
+    <!-- carousel banner conten -->
+    <div class="carousel-inner">
+        <div class="carousel-item active" style="max-height: 700px;">
+            <video class="d-block w-100" autoplay muted loop poster="{{url_for('static', filename='img/StorySlides_4.jpg')}}">
+                <source src="{{url_for('static', filename='img/WalingRain_1.mp4')}}" type="video/mp4">
+            </video>
+            <div class="carousel-caption d-none d-lg-block">
+                <h1 class="display-4">A shower of new styles.</h1>
+                <p class="lead">redefine yourslef with the umbella
+                </p>
+                <p class="text-small text-muted d-none d-xl-block">Umbrella cant stop rain but make us to stand in rain.
+                    Confidence may not bring success but it gives power to face any
+                    challenge.</p>
+                <a class="btn btn-outline-light" href="#">Learn more</a>
+            </div>
+        </div>
+
+        <!-- from series fateh series item -->
+        {% for item in series%}
+        <div class="carousel-item" style="max-height: 700px;">
+            <img class="d-block w-100" src="{{url_for('static', filename='img/'+item.image)}}" alt="Slide story image">
+            <div class="carousel-caption d-none d-lg-block">
+                <h1 class="display-4">{{item.name}}</h1>
+                <p class="lead">{{item.slogan}}</p>
+                <p class="text-small text-muted d-none d-xl-block">{{item.description}}</p>
+                <a class="btn btn-outline-light" href="{{ url_for('main.seriesUmbrellas', seriesid=item.id) }}">Learn more</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="carousel-control-prev" href="#topic-story" data-slide="prev">
+        <img src="{{url_for('static', filename='img/arrows-left.svg')}}" width="24" height="24" alt="right">
+    </a>
+    <a class="carousel-control-next" href="#topic-story" data-slide="next">
+        <img src="{{url_for('static', filename='img/arrows-right.svg')}}" width="24" height="24" alt="left">
+    </a>
+</div>
+{% endblock %}
+
+{% block main %}
+<!-- marketing information --> 
+<section class="series-cards">
+    <h3 class="text-center" style="user-select: none; ">the Umbella Style selection</h3>
+
+    <div class="card-deck mt-3" >
+        {% for umbrella in overall%}
+        <article class="card">
+            <a href="{{ url_for('main.Umbrellas', umbrellaid=umbrella.id)}}">
+                <img class="card-img" src="{{url_for('static', filename='img/'+umbrella.image)}}" alt="Card image">
+                <div class="card-img-overlay text-center p-auto d-flex flex-column justify-content-end">
+                    <div class="card-body">
+                        <h4 class="card-title d-sm-none d-md-block">{{umbrella.name}}</h4>
+                        <h6 class="card-subtitle mb-2 d-sm-none d-md-none d-lg-block d-xl-block">{{umbrella.artist}}
+                        </h6>
+                        <p class="card-text d-sm-none d-md-none d-lg-none d-xl-block">{{umbrella.description[0]}}
+                        </p>
+                    </div>
+                    <div class="add d-flex justify-content-around align-items-center">
+                        <div class="price d-sm-none d-md-block">
+                            <h6 class="card-text tag">{{umbrella.price}}</h6>
+                        </div>
+                        <button type="button" class="btn btn-primary w-lg-25 btn-sm">Add to cart</button>
+                    </div>
+                </div>
+            </a>
+        </article>
+        {% endfor %}
+    </div>
+</section>    
+{% endblock %}
