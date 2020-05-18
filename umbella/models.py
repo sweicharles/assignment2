@@ -1,36 +1,39 @@
 from datetime import datetime
 from . import db
 
+class Series():
+    # db.Model
 
+    # __tablename__ = 'series'
+    # id = db.Column(db.Integer, primary_key = True)
+    # name = db.Column(db.String(64), unique = True)
+    # slogan = db.Column(db.String(120), unique = True)
+    # description = db.Column(db.String(500), nullable = False)
+    # image = db.Column(db.String(60), nullable=False, default='Umbrella_black.png')
+    # umbrella = db.relationship('Umbrella', backref = 'Series', cascade="all, delete-orphan")
 
-class Series(db.Model):
+    def __init__(self, id, name, slogan, description, image):
+        self.id = id
+        self.name = name
+        self.slogan = slogan
+        self.description = description
+        self.image = image
 
-    __tablename__ = 'series'
-    id = db.Column(db.Integer, primary_key = True)
-    name = db.Column(db.String(64), unique = True)
-    slogan = db.Column(db.String(120), unique = True)
-    description = db.Column(db.String(500), nullable = False)
-    image = db.Column(db.String(60), nullable=False, default='Umbrella_black.png')
-    umbrella = db.relationship('Umbrella', backref = 'Series', cascade="all, delete-orphan")
-
-    # def __init__(self, id, name, slogan, description, image):
-    #     self.id = id
-    #     self.name = name
-    #     self.slogan = slogan
-    #     self.description = description
-    #     self.image = image
-
-    # def get_series_detail(self):
-    #     return str(self)
+    def get_series_detail(self):
+        return str(self)
 
     def __repr__(self):
         str = "Id: {}, Name: {}, Slogan: {}, Descrition: {}, Image: {} \n"
         str = str.format(self.id, self.name, self.slogan, self.description, self.image)
         return str
 
+# orderdetails = db.Table('orderdetails', 
+# )
 
 
 class Umbrella:
+
+
     def __init__(self, id, name, item_type, price, color, pattern, artist, texture, dimensions, weight, description, image, series, view):
         self.id = id
         self.name = name
