@@ -24,8 +24,7 @@
         <div class="d-flex flex-column justify-content-center mx-auto p-5">
             
             <div class="my-5 col-lg-6 col-sm-8 text-center mx-auto  style="user-select: none;">
-                <h2>
-                    <br>
+                <h2 id="top_story">
                     <span style="color: #242424;">The Um<span class="bella">bella</span>
                         <br> the <span class="bella">beauty</span> of umbrella</span>
                     <br>
@@ -55,6 +54,14 @@
                     
                 </div>
             </div>
+            <div class="backToTop mb-3 mx-auto">
+                <a href="{{ url_for('main.story',_anchor='top_story') }}"
+                    class="btn btn-light btn-sm"">Back to top</a>
+                    <div class=" mx-2"></div>
+                <a href="{{ url_for('main.index', _anchor='Umbrella_anchor') }}" class="btn btn-light btn-sm">Shop</a>
+                <div class="mx-2"></div>
+            </div>
         </div>
+
 </section>
 {% endblock %}

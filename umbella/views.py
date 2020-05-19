@@ -48,8 +48,10 @@ def seriesUmbrellas(seriesid):
 @bp.route('/umbrella/<int:umbrellaid>/')
 def Umbrellas(umbrellaid):
     selectedUmbrellas = Umbrella.query.filter(Umbrella.id == umbrellaid).first()
+    selectedItem = Series.query.filter(
+        Series.id == selectedUmbrellas.series_id).first()
     series = Series.query.order_by(Series.name).all()
-    return render_template('umbrella.html', umbrella=selectedUmbrellas, series=series)
+    return render_template('umbrella.html', umbrella=selectedUmbrellas, item=selectedItem, series=series)
 
 
 # setting the route in oder page
@@ -152,7 +154,7 @@ def checkout():
                 db.session.commit()
                 del session['order_id']
                 flash(
-                    'Thank you for choosing Umbella! successfully submit.')
+                    'Thank you for choosing Umbella! successfully submit your order.')
                 return redirect(url_for('main.index'))
             except:
                 return 'There was an issue completing your order'

@@ -28,7 +28,7 @@
                 <p class="text-small text-muted d-xl-block">Umbrella cant stop rain but make us to stand in rain.
                     Confidence may not bring success but it gives power to face any
                     challenge.</p>
-                <a class="btn btn-outline-light d-xs-none" href="#">Learn more</a>
+                <a class="btn btn-outline-light d-xs-none" href="{{url_for('main.story')}}">Learn more</a>
             </div>
         </div>
 
@@ -57,6 +57,34 @@
 {% endblock %}
 
 {% block main %}
+<section>
+    <div class="container mt-5">
+        <div class="text-white text-center">
+            <div>
+                <p class="h3 text-dark mb-4">A better excuse</p>
+            </div>
+        </div>
+        <!-- CSS Grid -->
+        <div class="row">
+            <div class="col-md-6">
+                <article>
+                    <h5>A sunny sky in the rain</h5>
+                    <p>Choose a right umbrella is as much important as you choose a best frind who gets your back. the umbella not only protect you fron servere weather but also allows you to show off.</p>
+                </article>
+
+            </div>
+            <div class="col-md-6">
+                <article>
+                    <h5>Why you need one?</h5>
+                    <p>An umbrella offers covering from sun or rain. No matter the weather, umbrellas have proved their usefulness and have a
+                    great meaning in society.</p>
+                </article>
+            </div>
+        </div>
+        <!-- Horizontal Rule -->
+        <hr>
+    </div>
+</section>
 <!-- marketing information --> 
 <section class="series-cards">
     <h3 class="text-center" style="user-select: none;" id="Umbrella_anchor">the Umbella Style selection</h3>

@@ -77,7 +77,7 @@
         <tbody>
             <tr>
                 <td scope="row">Series</td>
-                <td class="text-subtle">{{umbrella.series_id.name}} style umbrella</td>
+                <td class="text-subtle">{{item.name}} style umbrella</td>
             </tr>
             <tr>
                 <td scope="row">Dimension</td>
@@ -125,6 +125,8 @@
         <a href="{{ url_for('main.Umbrellas', umbrellaid=umbrella.id, _anchor='serialNumber_anchor') }}" class="btn btn-light btn-sm"">Back to top</a>
         <div class="mx-2"></div>
         <a href="{{ url_for('main.index', _anchor='Umbrella_anchor') }}" class="btn btn-light btn-sm">Shop others</a>
+        <div class="mx-2"></div>
+        <a href="{{ url_for('main.order') }}" class="btn btn-light btn-sm">Go to cart</a>
     </div>
 </article>
 <script src="{{url_for('static', filename='js/theUmbella_product.js')}}"></script>

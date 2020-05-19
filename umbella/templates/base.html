@@ -27,6 +27,18 @@
 
     <!-- the umbella customized stylesheet -->
     <link rel="stylesheet" href="{{url_for('static', filename='css/theUmbella_style.css')}}">
+    <style>
+        .flash_card{
+            text-decoration: none!important;
+        }
+        .alert:hover{
+            text-decoration: none!important;
+            user-select: none; 
+            letter-spacing: 1px!important;
+            transition: all 0.5s;
+            transition-timing-function: ease;
+        }
+    </style>
 </head>
 
 <body>
@@ -88,11 +100,13 @@
 
         {% with messages = get_flashed_messages() %}
         {% if messages %}
-        <div class="alert alert-light" role="alert">
-            {% for message in messages %}
-            {{ message }}
-            {% endfor %}
-        </div>
+        <a class="flash_card" href="{{url_for('main.index')}}">
+            <div class="alert font-weight-normal text-center m-5" role="alert" style="color:#e34249!important; font-size: 1.2rem!important">
+                {% for message in messages %}
+                {{ message }}
+                {% endfor %}
+            </div>
+        </a>
         {% endif %}
         {% endwith %}
 

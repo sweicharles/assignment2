@@ -1,37 +1,46 @@
 {% extends 'base.html' %}
 
 {% block main %}
+<style>
+    .check_out_card:hover {
+        box-shadow: 0px 5px 7px rgba(75,75,75,0.5);
+        transition: all 0.5s;
+        transition-timing-function: ease;
+    }
+</style>
 <!-- display contents of user basket -->
 <section>
     <div class="container">
         <div class="row co-12 d-flex mt-2 mb-2">
-            <h3>Cart</h3>
+            <h1>Cart</h1>
         </div>
         <!-- each umbrella on seperate row -->
         {% for umbrella in order.umbrellas %}
-        <div class="row shadow-md my-row mb-3">
-            <div class="col-sm-10 card">
-                <h5 class="card-header"> {{umbrella.Series.name}} {{umbrella.name}}</h5>
+        <div class="row m-3 ">
+            <div class="col-sm-9 card p-0 check_out_card">
+                <h5 class="card-header">{{umbrella.name}} <span class="font-weight-light">from {{umbrella.Series.name}}</span></h5>
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-2">
-                            <img class="img-thumbnail" src="{{url_for('static', filename=('img/' + umbrella.image))}}">
+                        <div class="col-lg-4 col-sm-9 m-auto">
+                            <a href="{{ url_for('main.Umbrellas', umbrellaid=umbrella.id)}}">
+                                <img class="img-thumbnail" src="{{url_for('static', filename=('img/' + umbrella.image))}}">
+                            </a>
                         </div>
-                        <div class="col-10">
+                        <div class="col-lg-7 col-sm-9 m-auto p-2" style="user-select: none; ">
                             <!-- Item Description -->
-                            <p class="card-text">{{umbrella.description}}</p>
+                            <p class="card-text text-left">{{umbrella.description}}</p>
                         </div>
                     </div>
                 </div>
             </div>
             <br><br>
             <!-- right column has price and delete button -->
-            <div class="col-sm-2">
+            <div class="col-sm-2 m-3 d-flex flex-column justify-content-center">
                 <!-- delete item button -->
                 <h5>{{ "$%.2f"|format(umbrella.price) }}</h5>
                 <form method="POST" action="{{url_for('main.deleteorderitem')}}">
                     <input type="hidden" id="id" name="id" value="{{umbrella.id}}">
-                    <input type="submit" value="Delete" class="btn btn-primary mb-3">
+                    <input type="submit" value="Delete item" class="btn btn-primary mb-3">
                 </form>
             </div>
         </div>
