@@ -328,6 +328,7 @@ img {
 }
 
 
+
 /* responsive textstyle */
 .card h4 {
   font-size: 2rem!important;
@@ -340,63 +341,75 @@ img {
     h1 {
         font-size: 0rem!important;
     } 
-  .card h4 {
+    .card h4 {
+        font-size: 0rem!important;
+    }
+    .card h6 {
     font-size: 0rem!important;
-  }
-  .card h6 {
-  font-size: 0rem!important;
     }
     .card p{
+    font-size: 0rem!important;
+    }
+    .carousel-caption .lead{
       font-size: 0rem!important;
   }
-  .carousel-caption{
-    top: 0%;
-    transform: translateY(-20%);
-    bottom: initial;
-}
+    .carousel-caption .text-small{
+        font-size: 0rem!important;
+    }
+    .carousel-caption{
+        top: 0%;
+        transform: translateY(-20%);
+        bottom: initial;
+    }
 }
 
-@media (min-width: 259px) {
+@media (min-width: 260px) {
   h1 {
         font-size: 0rem!important;
     } 
     .card h4 {
     font-size: 1rem!important;
-  }
-  .card h6 {
-      font-size: 0.8rem!important;
-  }
-  .card p{
+    }
+    .card h6 {
+        font-size: 0.8rem!important;
+    }
+    .card p{
+        font-size: 0rem!important;
+    }
+    .carousel-caption .lead{
       font-size: 0rem!important;
   }
-  .carousel-caption{
-    top: 10%;
-    transform: translateY(-20%);
-    bottom: initial;
-}
+    .carousel-caption .text-small{
+      font-size: 0rem!important;
+    }
+    .carousel-caption{
+        top: 10%;
+        transform: translateY(-20%);
+        bottom: initial;
+    }
 }
 
 @media (min-width: 360px) {
-  h1 {
+    h1 {
         font-size: 1rem!important;
     } 
-  .card h4 {
-    font-size: 1.8rem!important;
-  }
-  .card p{
-      font-size: 1rem!important;
-  }
-  .carousel-caption .lead{
-      font-size: 0rem!important;
-  }
-  .carousel-caption .text-small{
-      font-size: 0rem!important;
-  }
+    .card h4 {
+        font-size: 1.8rem!important;
+    }
+    .card p{
+        font-size: 1rem!important;
+    }
+    .carousel-caption .lead{
+        font-size: 0rem!important;
+    }
+    .carousel-caption .text-small{
+        font-size: 0rem!important;
+    }
   .carousel-caption{
     top: 28%;
     transform: translateY(-20%);
     bottom: initial;
-}
+    }   
   
 }
 

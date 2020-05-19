@@ -25,13 +25,16 @@ bp = Blueprint('main', __name__)
 # sending series as data
 @bp.route('/') # veiw function
 def index():
-    # overall = []
-    #create list of umbrella for this series
-    # for umbrella in umbrellas:
-    #     overall.append(umbrella)
     series = Series.query.order_by(Series.id).all()
     overall = Umbrella.query.order_by(Umbrella.name).all()
     return render_template('index.html', series=series, overall=overall)
+
+
+@bp.route('/story')  # veiw function
+def story():
+    
+    series = Series.query.order_by(Series.id).all()
+    return render_template('story.html', series=series)
 
 # setting the route in umbrella pages
 @bp.route('/series/<int:seriesid>/')  

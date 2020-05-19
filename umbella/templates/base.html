@@ -58,7 +58,7 @@
                         <a class="nav-item text-nav nav-link" href="{{url_for('main.index')}}">Home</a>
 
                         <!-- individual menu item-->
-                        <a class="nav-item text-nav nav-link" href="#">Portrait</a>
+                        <a class="nav-item text-nav nav-link" href="{{url_for('main.story')}}">Portrait</a>
 
                         <!-- individual menu item-->
                         <div class="dropdown">
@@ -86,11 +86,21 @@
             </div>
         </nav>
 
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div class="alert alert-light" role="alert">
+            {% for message in messages %}
+            {{ message }}
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% endwith %}
+
         {% block head %}{% endblock %}
     </header>
 
     <!-- main page content goes in container -->
-    <div class="container-fluid">
+    <div>
         <main class="text-center">
             {% block main %}{% endblock %}
         </main>
@@ -116,7 +126,7 @@
                 <div class="col-6 col-md">
                     <h5>Portrait</h5>
                     <ul class="list-unstyled text-small">
-                        <li><a class="text-secondary" href="#">the Umbella</a></li>
+                        <li><a class="text-secondary" href="{{url_for('main.story')}}">the Umbella</a></li>
                         <li><a class="text-secondary" target="blank"
                                 href="https://goo.gl/maps/i6cMz1xaAnk7Duir9">Locations</a></li>
                         <li><a class="text-secondary" href="#">Privacy</a></li>
@@ -128,8 +138,8 @@
                     <ul class="list-unstyled text-small">
                         <li>
                             <audio controls>
-                                <source src="{{url_for('static', filename='sound/Romanza-Andrea Bocelli.m4a')}}" type="audio/ogg">
-                                <source src="{{url_for('static', filename='sound/Romanza-Andrea Bocelli.m4a')}}">
+                                <source src="{{url_for('static', filename='sound/Avenged_Sevenfold_ Dear_God.m4a')}}" type="audio/ogg">
+                                <source src="{{url_for('static', filename='sound/Avenged_Sevenfold_ Dear_God.m4a')}}">
                                 Your browser does not support the audio element.
                             </audio>
                         </li>

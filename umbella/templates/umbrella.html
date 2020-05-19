@@ -6,9 +6,9 @@
 <!-- each tour is a bootstrap card -->
 
 
-<div class="container-fluid  product-bg text-center">
+<div class="container-fluid product-bg text-center">
     <div>
-        <h6 class="w-100 text-center pt-4 text-secondary font-weight-light">{{umbrella.series_id}}-{{umbrella.id}}</h6>
+        <h6 class="w-100 text-center pt-4 text-secondary font-weight-light" id="serialNumber_anchor">{{umbrella.series_id}}-{{umbrella.id}}</h6>
     </div>
     <section class="row justify-content-center">
         <article class="detail col-xl-2 col-lg-3 col-md-6 text-center">
@@ -55,7 +55,10 @@
             </div>
             <div class="itemName my-xl-5 my-md-4 py-xl-5 py-md-3 ">{{umbrella.name}}</div>
             <div>
-                <a href="{{ url_for('main.order', umbrella_id=umbrella.id) }}" class="btn btn-secondary buy">Purchase</a>
+                <form action="{{ url_for('main.order') }}">
+                    <input type="hidden" id="umbrella_id" name="umbrella_id" value="{{ umbrella.id }}">
+                    <input class="btn btn-secondary buy" type="submit" value="Purchase">
+                </form>
             </div>
         </div>
     </section>
@@ -119,7 +122,9 @@
         </tbody>
     </table>
     <div class="backToTop">
-        <button type="button" class="btn btn-light btn-sm" onclick="topFunction()" id="myBtn">Back to top</button>
+        <a href="{{ url_for('main.Umbrellas', umbrellaid=umbrella.id, _anchor='serialNumber_anchor') }}" class="btn btn-light btn-sm"">Back to top</a>
+        <div class="mx-2"></div>
+        <a href="{{ url_for('main.index', _anchor='Umbrella_anchor') }}" class="btn btn-light btn-sm">Shop others</a>
     </div>
 </article>
 <script src="{{url_for('static', filename='js/theUmbella_product.js')}}"></script>
