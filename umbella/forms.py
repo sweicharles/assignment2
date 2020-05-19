@@ -13,11 +13,9 @@ class CheckoutForm(FlaskForm):
     firstname = StringField("Your first mame", validators=[InputRequired()])
     surname = StringField("Your Sur name", validators=[InputRequired()])
     title = StringField("Your title", validators=[InputRequired()])
-    country = StringField("Your country", validators=[InputRequired()])
     postcode = StringField("zip code", validators=[InputRequired()])
     address = StringField("Address", validators=[InputRequired()])
     phone = StringField("Your mobile", validators=[InputRequired()])
     email = StringField("Your email", validators=[InputRequired(), email()])
-    promotecode = StringField('promote code', validators=[InputRequired()])
     submit = SubmitField("Send to Agent")
 

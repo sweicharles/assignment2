@@ -8,7 +8,7 @@
 
 <div class="container-fluid  product-bg text-center">
     <div>
-        <h6 class="w-100 text-center pt-4 text-secondary font-weight-light">{{umbrella.series.id}}-{{umbrella.id}}</h6>
+        <h6 class="w-100 text-center pt-4 text-secondary font-weight-light">{{umbrella.series_id}}-{{umbrella.id}}</h6>
     </div>
     <section class="row justify-content-center">
         <article class="detail col-xl-2 col-lg-3 col-md-6 text-center">
@@ -18,7 +18,7 @@
             </div>
             <div class="detail-group mt-xl-3 mt-lg-2 mt-md-3">
                 <h6 class="text-small-title">Pattern story</h6>
-                <p class="text-subtle">{{umbrella.description[0]}}</p>
+                <p class="text-subtle">{{umbrella.description}}</p>
             </div>
             
         </article>
@@ -34,10 +34,10 @@
                 <div class="carousel-inner">
                     
                     <div class="carousel-item active" style="max-height: 700px;">
-                        <img class="d-block w-100" src="{{url_for('static', filename='img/'+umbrella.image)}}" alt=" Umbrella picture">
+                        <img class="d-block w-100" src="{{url_for('static', filename='img/'+umbrella.image)}}" alt="Umbrella picture">
                     </div>
                     <div class="carousel-item" style="max-height: 700px;">
-                        <img class="d-block w-100 " src="{{url_for('static', filename='img/'+umbrella.view)}}" alt=" pattern plain view">
+                        <img class="d-block w-100 " src="{{url_for('static', filename='img/'+umbrella.view)}}" alt="pattern plain view">
                     </div>
             
                 </div>
@@ -74,7 +74,7 @@
         <tbody>
             <tr>
                 <td scope="row">Series</td>
-                <td class="text-subtle">{{umbrella.series.name}} style umbrella</td>
+                <td class="text-subtle">{{umbrella.series_id.name}} style umbrella</td>
             </tr>
             <tr>
                 <td scope="row">Dimension</td>
@@ -88,24 +88,8 @@
                 <td scope="row">Topic Colour</td>
                     <td>
                     <div class="color-group">
-                        <div class="colour" style="background-color: {{umbrella.color[0][0]}}">AA</div>
-                        <span class="text-subtle">{{umbrella.color[0][1]}}</span>
-                    </div>
-                    <div class="color-group">
-                        <div class="colour" style="background-color: {{umbrella.color[1][0]}}">AA</div>
-                        <span class="text-subtle">{{umbrella.color[1][1]}}</span>
-                    </div>
-                    <div class="color-group">
-                        <div class="colour" style="background-color: {{umbrella.color[2][0]}}">AA</div>
-                        <span class="text-subtle">{{umbrella.color[2][1]}}</span>
-                    </div>
-                    <div class="color-group">
-                        <div class="colour" style="background-color: {{umbrella.color[3][0]}}">AA</div>
-                        <span class="text-subtle">{{umbrella.color[3][1]}}</span>
-                    </div>
-                    <div class="color-group">
-                        <div class="colour" style="background-color: {{umbrella.color[4][0]}}">AA</div>
-                        <span class="text-subtle">{{umbrella.color[4][1]}}</span>
+                        <div class="colour" style="background-color: {{umbrella.color}}">AA</div>
+                        <span class="text-subtle">{{umbrella.color_name}}</span>
                     </div>
                 </td>
             </tr>
@@ -127,8 +111,8 @@
                 <td scope="row">Featuring</td>
                 <td class="text-subtle">
                     <ul>
-                        <li>{{umbrella.description[1]}}</li>
-                        <li>{{umbrella.description[2]}}</li>
+                        <li>{{umbrella.description_1}}</li>
+                        <li>{{umbrella.description_2}}</li>
                     </ul>
                 </td>
             </tr>
@@ -138,8 +122,7 @@
         <button type="button" class="btn btn-light btn-sm" onclick="topFunction()" id="myBtn">Back to top</button>
     </div>
 </article>
-
-
+<script src="{{url_for('static', filename='js/theUmbella_product.js')}}"></script>
 {% endblock %}
 
 

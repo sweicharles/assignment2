@@ -37,14 +37,10 @@ function scrollFunction() {
   } else {
     mybutton.style.display = "none";
   }
-}
+};
 
 // When the user clicks on the button, scroll to the top of the document
 function topFunction() {
   document.body.scrollTop = 0; // For Safari
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-}
-<<<<<<< HEAD:umbella/static/js/theUmbella_product.js
-=======
-
->>>>>>> 42672884bc68a281c8bd1ee1044f48eba411881d:JS/theUmbella_product.js
+};

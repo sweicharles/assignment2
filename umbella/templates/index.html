@@ -21,14 +21,14 @@
             <video class="d-block w-100" autoplay muted loop poster="{{url_for('static', filename='img/StorySlides_4.jpg')}}">
                 <source src="{{url_for('static', filename='img/WalingRain_1.mp4')}}" type="video/mp4">
             </video>
-            <div class="carousel-caption d-none d-lg-block">
+            <div class="carousel-caption d-lg-block">
                 <h1 class="display-4">A shower of new styles.</h1>
                 <p class="lead">redefine yourslef with the umbella
                 </p>
-                <p class="text-small text-muted d-none d-xl-block">Umbrella cant stop rain but make us to stand in rain.
+                <p class="text-small text-muted d-xl-block">Umbrella cant stop rain but make us to stand in rain.
                     Confidence may not bring success but it gives power to face any
                     challenge.</p>
-                <a class="btn btn-outline-light" href="#">Learn more</a>
+                <a class="btn btn-outline-light d-xs-none" href="#">Learn more</a>
             </div>
         </div>
 
@@ -36,11 +36,11 @@
         {% for item in series%}
         <div class="carousel-item" style="max-height: 700px;">
             <img class="d-block w-100" src="{{url_for('static', filename='img/'+item.image)}}" alt="Slide story image">
-            <div class="carousel-caption d-none d-lg-block">
+            <div class="carousel-caption d-lg-block">
                 <h1 class="display-4">{{item.name}}</h1>
                 <p class="lead">{{item.slogan}}</p>
-                <p class="text-small text-muted d-none d-xl-block">{{item.description}}</p>
-                <a class="btn btn-outline-light" href="{{ url_for('main.seriesUmbrellas', seriesid=item.id) }}">Learn more</a>
+                <p class="text-small text-muted d-xl-block">{{item.description}}</p>
+                <a class="btn btn-outline-light d-xs-none" href="{{ url_for('main.seriesUmbrellas', seriesid=item.id) }}">Learn more</a>
             </div>
         </div>
         {% endfor %}
@@ -61,21 +61,21 @@
 <section class="series-cards">
     <h3 class="text-center" style="user-select: none; ">the Umbella Style selection</h3>
 
-    <div class="card-deck mt-3" >
+    <div class="card-columns" >
         {% for umbrella in overall%}
-        <article class="card">
+        <article class="card my-3">
             <a href="{{ url_for('main.Umbrellas', umbrellaid=umbrella.id)}}">
                 <img class="card-img" src="{{url_for('static', filename='img/'+umbrella.image)}}" alt="Card image">
                 <div class="card-img-overlay text-center p-auto d-flex flex-column justify-content-end">
                     <div class="card-body">
-                        <h4 class="card-title d-sm-none d-md-block">{{umbrella.name}}</h4>
+                        <h4 class="card-title d-sm-block d-md-block">{{umbrella.name}}</h4>
                         <h6 class="card-subtitle mb-2 d-sm-none d-md-none d-lg-block d-xl-block">{{umbrella.artist}}
                         </h6>
-                        <p class="card-text d-sm-none d-md-none d-lg-none d-xl-block">{{umbrella.description[0]}}
+                        <p class="card-text d-sm-none d-md-none d-lg-none d-xl-block">{{umbrella.description}}
                         </p>
                     </div>
                     <div class="add d-flex justify-content-around align-items-center">
-                        <div class="price d-sm-none d-md-block">
+                        <div class="price d-sm-block d-md-block">
                             <h6 class="card-text tag">{{umbrella.price}}</h6>
                         </div>
                         <button type="button" class="btn btn-primary w-lg-25 btn-sm">Add to cart</button>
@@ -86,4 +86,5 @@
         {% endfor %}
     </div>
 </section>    
+
 {% endblock %}

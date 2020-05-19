@@ -21,7 +21,3 @@ $(document).ready(function(){
     $("#myCarousel").carousel("next");
   });
 });
-<<<<<<< HEAD:umbella/static/js/theUmbella.js
-
-=======
->>>>>>> 42672884bc68a281c8bd1ee1044f48eba411881d:JS/theUmbella.js

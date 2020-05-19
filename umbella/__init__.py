@@ -17,7 +17,7 @@ def create_app():
     app.secret_key = 'UmbellaSecretKeyN10669710'
 
     #set the app configuration data
-    app.config['SQLAlLCHEMY_DATABASE_URL'] = 'sqlite:///umbella.sqlite'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///umbella.sqlite'
 
     # initialize db with flask
     db.init_app(app)
@@ -28,6 +28,8 @@ def create_app():
     # add the Blueprint
     from . import views
     app.register_blueprint(views.bp)
+    from . import admin
+    app.register_blueprint(admin.bp)
 
     return app
 
