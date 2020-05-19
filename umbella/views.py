@@ -138,8 +138,8 @@ def checkout():
         
         if form.validate_on_submit():
             order.status = True
-            order.firstName = form.firstname.data
-            order.surName = form.surname.data
+            order.firstname = form.firstname.data
+            order.surname = form.surname.data
             order.title = form.title.data
             order.postCode = form.postcode.data
             order.address = form.address.data
