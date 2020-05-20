@@ -36,6 +36,18 @@ def story():
     series = Series.query.order_by(Series.id).all()
     return render_template('story.html', series=series)
 
+@bp.route('/search/')
+def search():
+    search = request.args.get('search')
+    print(search)
+    search = '%{}%'.format(search)
+    overall = Umbrella.query.filter(Umbrella.description.like(search)).all()
+    if overall == []:
+        flash('We are sorry, there is no relative result for the keyword...')
+    series = Series.query.order_by(Series.id).all()
+    return render_template('search.html', Umbrellas=overall, series=series)
+
+
 # setting the route in umbrella pages
 @bp.route('/series/<int:seriesid>/')  
 def seriesUmbrellas(seriesid):

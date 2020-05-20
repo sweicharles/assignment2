@@ -89,8 +89,8 @@
                         <a class="nav-item text-nav nav-link" href="{{url_for('main.order')}}">Cart</a>
 
                         <!-- search box -->
-                        <form class="form-inline ml-xl-5 ml-lg-3 my-lg-0 form-row">
-                            <input class="form-control mr-sm-2 form-control-sm col-7" type="search" placeholder="Looking for...">
+                        <form class="form-inline ml-xl-5 ml-lg-3 my-lg-0 form-row" action="{{url_for('main.search')}}">
+                            <input class="form-control mr-sm-2 form-control-sm col-7" type="search" placeholder="Looking for..." name="search">
                             <button class="btn btn-outline-light my-1 my-sm-0 btn-sm col-4" type="submit">Search</button>
                         </form>
                     </div>
@@ -101,7 +101,7 @@
         {% with messages = get_flashed_messages() %}
         {% if messages %}
         <a class="flash_card" href="{{url_for('main.index')}}">
-            <div class="alert font-weight-normal text-center m-5" role="alert" style="color:#e34249!important; font-size: 1.2rem!important">
+            <div class="alert font-weight-normal text-center m-3" role="alert" style="color:#e34249!important; font-size: 1.2rem!important">
                 {% for message in messages %}
                 {{ message }}
                 {% endfor %}
