@@ -12,7 +12,7 @@
 <section>
     <div class="container">
         <div class="row co-12 d-flex mt-2 mb-2">
-            <h1>Cart</h1>
+            <h1 data-aos="fade-up" data-aos-delay="100">Cart</h1>
         </div>
         <!-- each umbrella on seperate row -->
         {% for umbrella in order.umbrellas %}
@@ -49,13 +49,13 @@
         <!-- total price and page controls -->
         <section>
             <div class="row co-12 d-flex">
-                <h5 class="mt-4">Total price: {{ "$%.2f"|format(totalprice) }}</h5>
+                <h5 class="mt-4" data-aos="fade-up" data-aos-delay="150">Total price: {{ "$%.2f"|format(totalprice) }}</h5>
             </div>
 
             <div class="row co-12 d-flex mt-2 mb-4">
-                <a href="{{ url_for('main.index', _anchor='Umbrella_anchor') }}" class="btn btn-primary mr-4">Shop others</a>
-                <a href="{{ url_for('main.checkout') }}" class="btn btn-primary mr-4">Checkout</a>
-                <a href="{{ url_for('main.deleteorder') }}" class="btn btn-primary">Empty Basket</a>
+                <a href="{{ url_for('main.index', _anchor='Umbrella_anchor') }}" class="btn btn-primary mr-4" data-aos="fade-up" data-aos-delay="100">Shop others</a>
+                <a href="{{ url_for('main.checkout') }}" class="btn btn-primary mr-4" data-aos="fade-up" data-aos-delay="200">Checkout</a>
+                <a href="{{ url_for('main.deleteorder') }}" class="btn btn-primary" data-aos="fade-up" data-aos-delay="300">Empty Basket</a>
             </div>
         </section>
     </div>

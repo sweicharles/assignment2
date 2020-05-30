@@ -13,16 +13,16 @@
     <section class="row justify-content-center">
         <article class="detail col-xl-2 col-lg-3 col-md-6 text-center">
             <div class="detail-group mt-xl-3 mt-lg-2 mt-md-3">
-                <h6 class="text-small-title">Artist</h6>
-                <p class="text-subtle">{{umbrella.artist}}</p>
+                <h6 class="text-small-title" data-aos="fade-up" data-aos-delay="200">Artist</h6>
+                <p class="text-subtle" data-aos="fade-up" data-aos-delay="400">{{umbrella.artist}}</p>
             </div>
             <div class="detail-group mt-xl-3 mt-lg-2 mt-md-3">
-                <h6 class="text-small-title">Pattern story</h6>
-                <p class="text-subtle">{{umbrella.description}}</p>
+                <h6 class="text-small-title" data-aos="fade-up" data-aos-delay="300">Pattern story</h6>
+                <p class="text-subtle" data-aos="fade-up" data-aos-delay="500">{{umbrella.description}}</p>
             </div>
             
         </article>
-        <div class="col-xl-6 col-lg-6">
+        <div class="col-xl-6 col-lg-6" data-aos="fade-up" data-aos-delay="100">
 
             <div id="topic-story" class="carousel slide" data-ride="carousel">
                 <!-- Indicators -->
@@ -50,12 +50,12 @@
         </div>
         <div class="detail col-xl-2 col-lg-3 col-md-6 text-center" >
             <div class="price-container">
-                <span class="currencyFormat align-top">A$</span>
-                <span class="itemPrice align-middle">{{umbrella.price}}</span>
+                <span class="currencyFormat align-top" data-aos="fade-up" data-aos-delay="300">A$</span>
+                <span class="itemPrice align-middle" data-aos="fade-up" data-aos-delay="500">{{umbrella.price}}</span>
             </div>
-            <div class="itemName my-xl-5 my-md-4 py-xl-5 py-md-3 ">{{umbrella.name}}</div>
+            <div class="itemName my-xl-5 my-md-4 py-xl-5 py-md-3 " data-aos="fade-up" data-aos-delay="400">{{umbrella.name}}</div>
             <div>
-                <form action="{{ url_for('main.order') }}">
+                <form action="{{ url_for('main.order') }}" data-aos="fade-up" data-aos-delay="200">
                     <input type="hidden" id="umbrella_id" name="umbrella_id" value="{{ umbrella.id }}">
                     <input class="btn btn-secondary buy" type="submit" value="Purchase">
                 </form>
@@ -66,9 +66,17 @@
         <h6 class="pt-4"></h6>
     </div>
 </div>
+<div>
+    <div class="text-white text-center">
+        <div>
+            <p class="h3 text-dark mb-4" style="color: darkslategray;">more to know</p>
+            <span style="color: #e34249;">↓</span>
+        </div>
+    </div>
+</div>
 
 <article class="w-75 mt-5 mx-auto text-left">
-    <table class="table table-sm" style="user-select: none;">
+    <table class="table table-sm" style="user-select: none;" data-aos="fade-up" data-aos-delay="300">
         <thead >
             <tr>
                 <th colspan="3" class="text-center">Specification</th>
@@ -122,11 +130,11 @@
         </tbody>
     </table>
     <div class="backToTop">
-        <a href="{{ url_for('main.Umbrellas', umbrellaid=umbrella.id, _anchor='serialNumber_anchor') }}" class="btn btn-light btn-sm"">Back to top</a>
+        <a href="{{ url_for('main.Umbrellas', umbrellaid=umbrella.id, _anchor='serialNumber_anchor') }}" class="btn btn-light btn-sm"" data-aos="fade-up" data-aos-delay="100">Back to top</a>
         <div class="mx-2"></div>
-        <a href="{{ url_for('main.index', _anchor='Umbrella_anchor') }}" class="btn btn-light btn-sm">Shop others</a>
+        <a href="{{ url_for('main.index', _anchor='Umbrella_anchor') }}" class="btn btn-light btn-sm" data-aos="fade-up" data-aos-delay="200">Shop others</a>
         <div class="mx-2"></div>
-        <a href="{{ url_for('main.order') }}" class="btn btn-light btn-sm">Go to cart</a>
+        <a href="{{ url_for('main.order') }}" class="btn btn-light btn-sm" data-aos="fade-up" data-aos-delay="300">Go to cart</a>
     </div>
 </article>
 <script src="{{url_for('static', filename='js/theUmbella_product.js')}}"></script>

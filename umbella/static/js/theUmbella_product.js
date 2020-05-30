@@ -1,3 +1,14 @@
+AOS.init();
+
+AOS.init({
+  easing: 'ease-out-back',
+  duration: 800,
+  delay: 300,
+  once: true,
+  disable: 'mobile'
+});
+
+
 $(document).ready(function(){
   // Activate Carousel with a specified interval
   $("#myCarousel").carousel({interval: 5000});
@@ -21,4 +32,3 @@ $(document).ready(function(){
     $("#myCarousel").carousel("next");
   });
 });
-

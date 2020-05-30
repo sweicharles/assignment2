@@ -22,13 +22,13 @@
                 <source src="{{url_for('static', filename='img/WalingRain_1.mp4')}}" type="video/mp4">
             </video>
             <div class="carousel-caption d-lg-block">
-                <h1 class="display-4">A shower of new styles.</h1>
-                <p class="lead">redefine yourslef with the umbella
+                <h1 class="display-4" data-aos="fade-up" data-aos-delay="100">A shower of new styles.</h1>
+                <p class="lead" data-aos="fade-up" data-aos-delay="150">redefine yourslef with the umbella
                 </p>
-                <p class="text-small text-muted d-xl-block">Umbrella cant stop rain but make us to stand in rain.
+                <p class="text-small text-muted d-xl-block" data-aos="fade-up" data-aos-delay="200">Umbrella cant stop rain but make us to stand in rain.
                     Confidence may not bring success but it gives power to face any
                     challenge.</p>
-                <a class="btn btn-outline-light d-xs-none" href="{{url_for('main.story')}}">Learn more</a>
+                <a class="btn btn-outline-light d-xs-none" href="{{url_for('main.story')}}" data-aos="fade-up" data-aos-delay="250">Learn more</a>
             </div>
         </div>
 
@@ -58,25 +58,26 @@
 
 {% block main %}
 <section>
-    <div class="container mt-5">
+    <div class="container my-5">
         <div class="text-white text-center">
             <div>
-                <p class="h3 text-dark mb-4">A better excuse</p>
+                <p class="h3 text-dark mb-4" data-aos="fade-down" data-aos-delay="50">A better excuse</p>
+                <span style="color: #e34249;">↓</span>
             </div>
         </div>
         <!-- CSS Grid -->
         <div class="row">
             <div class="col-md-6">
                 <article>
-                    <h5>A sunny sky in the rain</h5>
-                    <p>Choose a right umbrella is as much important as you choose a best frind who gets your back. the umbella not only protect you fron servere weather but also allows you to show off.</p>
+                    <h5 data-aos="fade-left" data-aos-delay="70">A sunny sky in the rain</h5>
+                    <p style="color: lightslategray;" data-aos="fade-up" data-aos-delay="100">Choose a right umbrella is as much important as you choose a best frind who gets your back. the umbella not only protect you fron servere weather but also allows you to show off.</p>
                 </article>
 
             </div>
             <div class="col-md-6">
                 <article>
-                    <h5>Why you need one?</h5>
-                    <p>An umbrella offers covering from sun or rain. No matter the weather, umbrellas have proved their usefulness and have a
+                    <h5 data-aos="fade-right" data-aos-delay="100">Why you need one?</h5>
+                    <p style="color: lightslategray;"  data-aos="fade-up" data-aos-delay="150">An umbrella offers covering from sun or rain. No matter the weather, umbrellas have proved their usefulness and have a
                     great meaning in society.</p>
                 </article>
             </div>
@@ -87,13 +88,13 @@
 </section>
 <!-- marketing information --> 
 <section class="series-cards">
-    <h3 class="text-center" style="user-select: none;" id="Umbrella_anchor">the Umbella Style selection</h3>
+    <h3 class="text-center" style="user-select: none; color:#e34249;" id="Umbrella_anchor" data-aos="fade-up" data-aos-delay="100">the Umbella total selection</h3>
 
     <div class="card-columns" >
         {% for umbrella in overall%}
-        <article class="card my-3">
+        <article class="card m-3" >
             <a href="{{ url_for('main.Umbrellas', umbrellaid=umbrella.id)}}">
-                <img class="card-img" src="{{url_for('static', filename='img/'+umbrella.image)}}" alt="Card image">
+                <img class="card-img" src="{{url_for('static', filename='img/'+umbrella.image)}}" alt="Card image" >
                 <div class="card-img-overlay text-center p-auto d-flex flex-column justify-content-end">
                     <div class="card-body">
                         <h4 class="card-title d-sm-block d-md-block">{{umbrella.name}}</h4>
@@ -119,5 +120,12 @@
         {% endfor %}
     </div>
 </section>    
-
+<div class="backToTop">
+    <div class="mx-2"></div>
+    <a href="{{ url_for('main.index', _anchor='Umbrella_anchor') }}" class="btn btn-light btn-sm" data-aos="fade-up"
+        data-aos-delay="200">view from top</a>
+    <div class="mx-2"></div>
+    <a href="{{ url_for('main.order') }}" class="btn btn-light btn-sm" data-aos="fade-up" data-aos-delay="300">Go to
+        cart</a>
+</div>
 {% endblock %}

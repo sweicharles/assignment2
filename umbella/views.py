@@ -30,6 +30,11 @@ def index():
     return render_template('index.html', series=series, overall=overall)
 
 
+@bp.route('/privacyterms')  # veiw function
+def privacy():
+    series = Series.query.order_by(Series.id).all()
+    return render_template('privacy.html', series=series)
+
 @bp.route('/story')  # veiw function
 def story():
     
@@ -41,7 +46,8 @@ def search():
     search = request.args.get('search')
     print(search)
     search = '%{}%'.format(search)
-    overall = Umbrella.query.filter(Umbrella.description.like(search)).all()
+    overall = Umbrella.query.filter(Umbrella.description.like(
+        search)+Umbrella.name.like(search)+Umbrella.artist.like(search)+Umbrella.description_1.like(search)+Umbrella.description_2.like(search)).all()
     if overall == []:
         flash('We are sorry, there is no relative result for the keyword...')
     series = Series.query.order_by(Series.id).all()

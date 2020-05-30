@@ -16,9 +16,9 @@
         <div class="carousel-item active" style="max-height: 500px;">
             <img class="d-block w-100" src="{{url_for('static', filename='img/'+item.image)}}" alt="Slide story image">
             <div class="carousel-caption d-lg-block">
-                <h1 class="display-4">{{item.name}}</h1>
-                <p class="lead">{{item.slogan}}</p>
-                <p class="text-small text-muted d-xl-block">{{item.description}}</p>
+                <h1 class="display-4" data-aos="fade-left" data-aos-delay="200">{{item.name}}</h1>
+                <p class="lead" data-aos="fade-right" data-aos-delay="300">{{item.slogan}}</p>
+                <p class="text-small text-muted d-xl-block" data-aos="fade-up" data-aos-delay="400">{{item.description}}</p>
             </div>
         </div>
     </div>
@@ -28,7 +28,7 @@
 {% block main %}
 <!-- marketing information -->
 <section class="series-cards">
-    <h3 class="text-center mb-3" style="user-select: none; ">the {{item.name}} Style selection</h3>
+    <h3 class="text-center mb-3" style="user-select: none; " data-aos="fade-up" data-aos-delay="200">the <span style="color: #e34249;" data-aos="fade-up" data-aos-delay="500">{{item.name}}</span> Style selection</h3>
 
     <div class="card-columns">
         
@@ -61,6 +61,15 @@
         {% endfor %}
     </div>
 </section>
+
+<div class="backToTop">
+    <div class="mx-2"></div>
+    <a href="{{ url_for('main.index', _anchor='Umbrella_anchor') }}" class="btn btn-light btn-sm" data-aos="fade-up"
+        data-aos-delay="200">Shop others</a>
+    <div class="mx-2"></div>
+    <a href="{{ url_for('main.order') }}" class="btn btn-light btn-sm" data-aos="fade-up" data-aos-delay="300">Go to
+        cart</a>
+</div>
 {% endblock %}
 
 
