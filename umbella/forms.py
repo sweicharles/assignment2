@@ -12,6 +12,7 @@ from wtforms.validators import email
 class CheckoutForm(FlaskForm):
     firstname = StringField("Your first mame", validators=[InputRequired()])
     surname = StringField("Your last name", validators=[InputRequired()])
+    # limited the options by using select field
     title = SelectField('Your title',
                         choices=[('1', 'Mr.'), ('2', 'Ms.'), ('3', 'Mrs.'),
                                  ('4', 'Miss'), ('5', 'None')])

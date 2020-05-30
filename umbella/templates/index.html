@@ -57,6 +57,7 @@
 {% endblock %}
 
 {% block main %}
+<!-- short description of the umbella website -->
 <section>
     <div class="container my-5">
         <div class="text-white text-center">
@@ -65,7 +66,6 @@
                 <span style="color: #e34249;">↓</span>
             </div>
         </div>
-        <!-- CSS Grid -->
         <div class="row">
             <div class="col-md-6">
                 <article>
@@ -82,7 +82,6 @@
                 </article>
             </div>
         </div>
-        <!-- Horizontal Rule -->
         <hr>
     </div>
 </section>
@@ -90,6 +89,7 @@
 <section class="series-cards">
     <h3 class="text-center" style="user-select: none; color:#e34249;" id="Umbrella_anchor" data-aos="fade-up" data-aos-delay="100">the Umbella total selection</h3>
 
+    <!-- iterate each product -->
     <div class="card-columns" >
         {% for umbrella in overall%}
         <article class="card m-3" >
@@ -120,6 +120,8 @@
         {% endfor %}
     </div>
 </section>    
+
+<!-- extra buttons links to other page -->
 <div class="backToTop">
     <div class="mx-2"></div>
     <a href="{{ url_for('main.index', _anchor='Umbrella_anchor') }}" class="btn btn-light btn-sm" data-aos="fade-up"

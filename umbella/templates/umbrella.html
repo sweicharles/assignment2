@@ -7,15 +7,19 @@
 
 
 <div class="container-fluid product-bg text-center">
+    <!-- umbrella id -->
     <div>
         <h6 class="w-100 text-center pt-4 text-secondary font-weight-light" id="serialNumber_anchor">{{umbrella.series_id}}-{{umbrella.id}}</h6>
     </div>
+    <!-- main information of umbrella -->
     <section class="row justify-content-center">
         <article class="detail col-xl-2 col-lg-3 col-md-6 text-center">
+            <!-- artiest information -->
             <div class="detail-group mt-xl-3 mt-lg-2 mt-md-3">
                 <h6 class="text-small-title" data-aos="fade-up" data-aos-delay="200">Artist</h6>
                 <p class="text-subtle" data-aos="fade-up" data-aos-delay="400">{{umbrella.artist}}</p>
             </div>
+            <!-- design story script -->
             <div class="detail-group mt-xl-3 mt-lg-2 mt-md-3">
                 <h6 class="text-small-title" data-aos="fade-up" data-aos-delay="300">Pattern story</h6>
                 <p class="text-subtle" data-aos="fade-up" data-aos-delay="500">{{umbrella.description}}</p>
@@ -32,7 +36,7 @@
                 </ul>
             
                 <div class="carousel-inner">
-                    
+                    <!-- pictures of umbrella -->
                     <div class="carousel-item active" style="max-height: 700px;">
                         <img class="d-block w-100" src="{{url_for('static', filename='img/'+umbrella.image)}}" alt="Umbrella picture">
                     </div>
@@ -49,11 +53,14 @@
 
         </div>
         <div class="detail col-xl-2 col-lg-3 col-md-6 text-center" >
+            <!-- price information -->
             <div class="price-container">
                 <span class="currencyFormat align-top" data-aos="fade-up" data-aos-delay="300">A$</span>
                 <span class="itemPrice align-middle" data-aos="fade-up" data-aos-delay="500">{{umbrella.price}}</span>
             </div>
+            <!-- umbrella title -->
             <div class="itemName my-xl-5 my-md-4 py-xl-5 py-md-3 " data-aos="fade-up" data-aos-delay="400">{{umbrella.name}}</div>
+            <!-- shop button -->
             <div>
                 <form action="{{ url_for('main.order') }}" data-aos="fade-up" data-aos-delay="200">
                     <input type="hidden" id="umbrella_id" name="umbrella_id" value="{{ umbrella.id }}">
@@ -62,10 +69,12 @@
             </div>
         </div>
     </section>
+    <!-- space divider -->
     <div>
         <h6 class="pt-4"></h6>
     </div>
 </div>
+<!-- leading sign -->
 <div>
     <div class="text-white text-center">
         <div>
@@ -75,6 +84,7 @@
     </div>
 </div>
 
+<!-- spection of the product -->
 <article class="w-75 mt-5 mx-auto text-left">
     <table class="table table-sm" style="user-select: none;" data-aos="fade-up" data-aos-delay="300">
         <thead >

@@ -2,6 +2,7 @@
 
 
 {% block main %}
+<!-- some addtional style setting -->
 <style>
     .bella:hover {
         color: #e34249;
@@ -22,7 +23,7 @@
 </style>
 <section style=" background-color:  rgb(222, 216, 211)!important">
         <div class="d-flex flex-column justify-content-center mx-auto p-5">
-            
+            <!-- short title introduction -->
             <div class="my-5 col-lg-6 col-sm-8 text-center mx-auto  style="user-select: none;">
                 <h2 id="top_story" data-aos="fade-up" data-aos-delay="200">
                     <span style="color: #242424;" >The Um<span class="bella">bella</span>
@@ -35,10 +36,12 @@
                 </h6>
             </div>
 
+            <!-- a office picture -->
             <div class="container m-3 mx-auto" data-aos="fade-up" data-aos-delay="500">
                 <img src="{{url_for('static', filename='img/IMG_2250.JPG')}}" alt="" style="background-image: cover; box-shadow: 0px 5px 7px rgba(0,0,0,0.5);" > 
             </div>
 
+            <!-- short story of the umbella -->
             <div class="container m-3 mx-auto" style="user-select: none;" >
                 <div class="row no-gutters" data-aos="fade-up" data-aos-delay="300">
                     <div class="col-12 col-sm-6 col-md-8 p-lg-5 p-sm-3 p-2 font-weight-light text-xl-left" style="background-color: white;">
@@ -54,6 +57,8 @@
                     
                 </div>
             </div>
+
+            <!-- extra button to control page -->
             <div class="backToTop mb-3 mx-auto" data-aos="fade-up" data-aos-delay="300">
                 <a href="{{ url_for('main.story',_anchor='top_story') }}"
                     class="btn btn-light btn-sm"">Back to top</a>

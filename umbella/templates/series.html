@@ -12,7 +12,7 @@
     </ul>
 
     <div class="carousel-inner">
-        <!-- from series fateh series item -->
+        <!-- the selected series item -->
         <div class="carousel-item active" style="max-height: 500px;">
             <img class="d-block w-100" src="{{url_for('static', filename='img/'+item.image)}}" alt="Slide story image">
             <div class="carousel-caption d-lg-block">
@@ -26,7 +26,7 @@
 {% endblock %}
 
 {% block main %}
-<!-- marketing information -->
+<!-- items information -->
 <section class="series-cards">
     <h3 class="text-center mb-3" style="user-select: none; " data-aos="fade-up" data-aos-delay="200">the <span style="color: #e34249;" data-aos="fade-up" data-aos-delay="500">{{item.name}}</span> Style selection</h3>
 

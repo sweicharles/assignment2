@@ -29,18 +29,20 @@ def index():
     overall = Umbrella.query.order_by(Umbrella.name).all()
     return render_template('index.html', series=series, overall=overall)
 
-
+# direct to privacy page
 @bp.route('/privacyterms')  # veiw function
 def privacy():
     series = Series.query.order_by(Series.id).all()
     return render_template('privacy.html', series=series)
 
+# direct to brand story page
 @bp.route('/story')  # veiw function
 def story():
     
     series = Series.query.order_by(Series.id).all()
     return render_template('story.html', series=series)
 
+# direct to search result page
 @bp.route('/search/')
 def search():
     search = request.args.get('search')
@@ -147,7 +149,7 @@ def deleteorderitem():
             return 'Problem deleting item from order'
     return redirect(url_for('main.order'))
 
-
+# direct to checkout page
 @bp.route('/checkout', methods=['GET', 'POST'])
 def checkout():
     form = CheckoutForm()
