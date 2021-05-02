@@ -23,7 +23,7 @@ bp = Blueprint('admin', __name__, url_prefix='/admin/')
 @bp.route('/dbseed/')
 def dbseed():
     # testing data in series
-    illstration = Series(name='illstration', slogan='Visual narrative of a text',
+    illustration = Series(name='illustration', slogan='Visual narrative of a text',
                          description='''Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, odio!''', image='illustration-story.jpg')
     artDeco = Series(name='Art deco', slogan='Love is an Art',
                      description='''Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, odio!''', image='art-deco-story.jpg')
@@ -35,7 +35,7 @@ def dbseed():
                      description='''Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia, odio!''', image='classic-story.jpg')
 
     try:
-      db.session.add(illstration)
+      db.session.add(illustration)
       db.session.add(artDeco)
       db.session.add(scenic)
       db.session.add(popArt)
@@ -58,7 +58,7 @@ def dbseed():
                             description_1='''Lorem ipsum dolor sit amet consectetur adipisicing elit.''',
                             description_2='''Inventore hic dolor numquam obcaecati accusantium. Ratione voluptate sint repellendus.''',
                             image='Umbrella-boston-public-library.png',
-                            series_id=illstration.id,
+                            series_id=illustration.id,
                             view="view_boston-public-library.jpg")
 
     JadeHandOfChina = Umbrella(name='Jade hand of China',
@@ -75,7 +75,7 @@ def dbseed():
                                description_1='''Lorem ipsum dolor sit amet consectetur adipisicing elit.''',
                                description_2='''Inventore hic dolor numquam obcaecati accusantium. Ratione voluptate sint repellendus.''',
                                image='Umbrella_Nika-Akin.png',
-                               series_id=illstration.id,
+                               series_id=illustration.id,
                                view="view_nika-akin.jpg")
 
     FishingBeach = Umbrella(name='Fishing Beach',
@@ -92,7 +92,7 @@ def dbseed():
                             description_1='''Lorem ipsum dolor sit amet consectetur adipisicing elit.''',
                             description_2='''Inventore hic dolor numquam obcaecati accusantium. Ratione voluptate sint repellendus''',
                             image='Umbrella-mcgill-library.png',
-                            series_id=illstration.id,
+                            series_id=illustration.id,
                             view="view_mcgill-library.jpg")
 
     TheMoonAtNight = Umbrella(name='The moon at night',
@@ -126,7 +126,7 @@ def dbseed():
                                   description_1='''Lorem ipsum dolor sit amet consectetur adipisicing elit.''',
                                   description_2='''Inventore hic dolor numquam obcaecati accusantium. Ratione voluptate sint repellendus''',
                                   image='Umbrella-Jack-Dylan.png',
-                                  series_id=illstration.id,
+                                  series_id=illustration.id,
                                   view="view_JackDylanASongofLoveandFire.jpg")
 
     JoinTheDiscussion = Umbrella(name='Join the discussion',

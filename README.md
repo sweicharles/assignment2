@@ -60,26 +60,59 @@ The technologies in this website using:
 * HTML & Bootstrap CSS
 * JavaScript
 * Flask Templates
-* Flask WTForms
+* Flask Bootstrap
 * Flask SQLAlchemy
+* Flask WTForms
+* Email validator
 * Animation on Sroll Library
 * Google font Library
 * Sqlite
-> using homebrew
-```
-$ brew install sqlite
-```
-5. DB Browser for SQLite
-```
-$ brew cask install db-browser-for-sqlite
-```
-
+* DB Browser for SQLite
 
 ---
 ## Usage
 
 ### Run the website 
-> using terminal / command line
+> before starting launch your web application, you need to install the following packages : flask, flask_bootstratp, flask_sqlalchemy, flask_wtf and email_validator. 
+
+> using homebrew
+
+* install flaks
+```
+$ pip install flaks
+```
+* install flaks_bootstrap
+```
+$ pip install flaks_bootstrap
+```
+* install flaks_sqlalchemy
+```
+$ pip install flaks_sqlalchemy
+```
+* install flaks_wtf
+```
+$ pip install flaks_wtf
+```
+* install email_validator
+```
+$ pip install email_validator
+```
+* install sqlite
+using homebrew
+```
+$ brew cask install sqlite
+```
+* install DB Browser
+using homebrew
+```
+$ brew cask install db-browser-for-sqlite
+```
+
+
+please put the Umbella folder and the run.py into same directory location.
+
+after package has been successfully install, you may use terminal / command line to lunch the program.
+
 ```
 $ cd ./umbella_2
 $ python3 run.py
@@ -88,6 +121,8 @@ $ python3 run.py
 
 After successfully runing your website, click the link down below.
 > [The Umbella](http://127.0.0.1:5000/)
+
+or visit the link : http://127.0.0.1:5000/
 
 *best user experience go with Chrome browser*
 

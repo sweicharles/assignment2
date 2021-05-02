@@ -1,197 +1,305 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- basic information -->
-    <link rel="shortcut icon" href="{{url_for('static', filename='img/Umbella_shorticon.jpg')}}">
+    <link
+      rel="shortcut icon"
+      href="{{url_for('static', filename='img/Umbella_shorticon.jpg')}}"
+    />
     <title>the Umbella</title>
-    <meta name="description"
-        content="Everyone deserves a special umbrella that can tell a story for themselves. The Umbella is an online umbrella eCommerce store that sells one high-quality umbrella with multiple amazing cover designs. The Umbella dedicates to provide plenty of shade pattern option which can be categorised in different series.">
-    <meta name="keywords" content="umbella, artist umbrella, pattern umbrella, design umbrella">
-    <meta name="author" content="Charles Swei, n10669710@qut.edu.au">
-    <meta name="copyright" content="the Umbella Copyright 2020">
-    <meta property="og:title" content="Umbella">
-    <meta property="og:type" content="umbrella ecommerce store">
+    <meta
+      name="description"
+      content="Everyone deserves a special umbrella that can tell a story for themselves. The Umbella is an online umbrella eCommerce store that sells one high-quality umbrella with multiple amazing cover designs. The Umbella dedicates to provide plenty of shade pattern option which can be categorised in different series."
+    />
+    <meta
+      name="keywords"
+      content="umbella, artist umbrella, pattern umbrella, design umbrella"
+    />
+    <meta name="author" content="Charles Swei, n10669710@qut.edu.au" />
+    <meta name="copyright" content="the Umbella Copyright 2020" />
+    <meta property="og:title" content="Umbella" />
+    <meta property="og:type" content="umbrella ecommerce store" />
 
     <!-- for multiple broweser compatibility -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
     <!-- Google font implement -->
-    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;800&display=swap"
-        rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;800&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- the umbella customized stylesheet -->
-    <link rel="stylesheet" href="{{url_for('static', filename='css/theUmbella_style.css')}}">
+    <link
+      rel="stylesheet"
+      href="{{url_for('static', filename='css/theUmbella_style.css')}}"
+    />
 
     <!-- scroll style  -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
     <style>
-        .flash_card{
-            text-decoration: none!important;
-        }
-        .alert:hover{
-            text-decoration: none!important;
-            user-select: none; 
-            letter-spacing: 1px!important;
-            transition: all 0.5s;
-            transition-timing-function: ease;
-        }
+      .flash_card {
+        text-decoration: none !important;
+      }
+      .alert:hover {
+        text-decoration: none !important;
+        user-select: none;
+        letter-spacing: 1px !important;
+        transition: all 0.5s;
+        transition-timing-function: ease;
+      }
     </style>
-</head>
+  </head>
 
-<body>
-    
+  <body>
     <header>
-        <!--navbar creates a navigation bar -->
-        <nav class="navbar navbar-expand-lg navbar-light sticky-top">
-            <div class="container">
-    
-                <!-- Logo -->
-                <a href="{{url_for('main.index')}}" class="navbar-brand" data-aos="fade-right" data-aos-delay="400">
-                    <img src="{{url_for('static', filename='img/logo.svg')}}" alt="Umbella Logo" width="32" height="32">
-                    <span>the Umbella</span>
-                </a>
-                <!-- a short description for the website -->
-                <div class="collapse navbar-collapse describe" data-aos="fade-right" data-aos-delay="600">A stylish online umbrella store</div>
+      <!--navbar creates a navigation bar -->
+      <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+          <!-- Logo -->
+          <a
+            href="{{url_for('main.index')}}"
+            class="navbar-brand"
+            data-aos="fade-right"
+            data-aos-delay="400"
+          >
+            <img
+              src="{{url_for('static', filename='img/logo.svg')}}"
+              alt="Umbella Logo"
+              width="32"
+              height="32"
+            />
+            <span>the Umbella</span>
+          </a>
+          <!-- a short description for the website -->
+          <div
+            class="collapse navbar-collapse describe"
+            data-aos="fade-right"
+            data-aos-delay="600"
+          >
+            A stylish online umbrella store
+          </div>
 
-                <!-- create a button for collapsing the menu -->
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
-                    aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-                    <span><img src="{{url_for('static', filename='img/symbols.svg')}}" alt="toggle" width="24" height="24"></span>
-                </button>
-    
-                <!-- Navbar -->
-                <div class="collapse navbar-collapse" id="navbarToggler">
-                    <div class="navbar-nav ml-auto">
+          <!-- create a button for collapsing the menu -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarToggler"
+            aria-controls="navbarToggler"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span
+              ><img
+                src="{{url_for('static', filename='img/symbols.svg')}}"
+                alt="toggle"
+                width="24"
+                height="24"
+            /></span>
+          </button>
 
-                        <!-- individual menu item-->
-                        <a class="nav-item text-nav nav-link" href="{{url_for('main.index')}}">Home</a>
+          <!-- Navbar -->
+          <div class="collapse navbar-collapse" id="navbarToggler">
+            <div class="navbar-nav ml-auto">
+              <!-- individual menu item-->
+              <a
+                class="nav-item text-nav nav-link"
+                href="{{url_for('main.index')}}"
+                >Home</a
+              >
 
-                        <!-- individual menu item-->
-                        <a class="nav-item text-nav nav-link" href="{{url_for('main.story')}}">Portrait</a>
+              <!-- individual menu item-->
+              <a
+                class="nav-item text-nav nav-link"
+                href="{{url_for('main.story')}}"
+                >Portrait</a
+              >
 
-                        <!-- individual menu item-->
-                        <div class="dropdown">
-                            <a class="nav-item text-nav nav-link dropdown-toggle" data-toggle="dropdown" id="bookDropdown"
-                                aria-haspopup="true" aria-expanded="false" href="#">Style Series</a>
-                            <!-- dropdown menu item list -->
-                            <div class="dropdown-menu" aria-labelledby="bookDropdown">
-                                {% for item in series%}
-                                <a class="dropdown-item" href="{{ url_for('main.seriesUmbrellas', seriesid=item.id)}}">{{ item.name }}</a>
-                                <div class="dropdown-divider"></div>
-                                {% endfor %}
-                            </div>
-                        </div>
-
-                        <!-- individual menu item-->
-                        <a class="nav-item text-nav nav-link" href="{{url_for('main.order')}}">Cart</a>
-
-                        <!-- search box -->
-                        <form class="form-inline ml-xl-5 ml-lg-3 my-lg-0 form-row" action="{{url_for('main.search')}}">
-                            <input class="form-control mr-sm-2 form-control-sm col-7" type="search" placeholder="Looking for..." name="search">
-                            <button class="btn btn-outline-light my-1 my-sm-0 btn-sm col-4" type="submit">Search</button>
-                        </form>
-                    </div>
+              <!-- individual menu item-->
+              <div class="dropdown">
+                <a
+                  class="nav-item text-nav nav-link dropdown-toggle"
+                  data-toggle="dropdown"
+                  id="bookDropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                  href="#"
+                  >Style Series</a
+                >
+                <!-- dropdown menu item list -->
+                <div class="dropdown-menu" aria-labelledby="bookDropdown">
+                  {% for item in series%}
+                  <a
+                    class="dropdown-item"
+                    href="{{ url_for('main.seriesUmbrellas', seriesid=item.id)}}"
+                    >{{ item.name }}</a
+                  >
+                  <div class="dropdown-divider"></div>
+                  {% endfor %}
                 </div>
-            </div>
-        </nav>
+              </div>
 
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
-        <a class="flash_card" href="{{url_for('main.index')}}">
-            <div class="alert font-weight-normal text-center m-3" role="alert" style="color:#e34249!important; font-size: 1.2rem!important">
-                {% for message in messages %}
-                {{ message }}
-                {% endfor %}
-            </div>
-        </a>
-        {% endif %}
-        {% endwith %}
+              <!-- individual menu item-->
+              <a
+                class="nav-item text-nav nav-link"
+                href="{{url_for('main.order')}}"
+                >Cart</a
+              >
 
-        {% block head %}{% endblock %}
+              <!-- search box -->
+              <form
+                class="form-inline ml-xl-5 ml-lg-3 my-lg-0 form-row"
+                action="{{url_for('main.search')}}"
+              >
+                <input
+                  class="form-control mr-sm-2 form-control-sm col-7"
+                  type="search"
+                  placeholder="Looking for..."
+                  name="search"
+                />
+                <button
+                  class="btn btn-outline-light my-1 my-sm-0 btn-sm col-4"
+                  type="submit"
+                >
+                  Search
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {% with messages = get_flashed_messages() %} {% if messages %}
+      <a class="flash_card" href="{{url_for('main.index')}}">
+        <div
+          class="alert font-weight-normal text-center m-3"
+          role="alert"
+          style="color: #e34249 !important; font-size: 1.2rem !important"
+        >
+          {% for message in messages %} {{ message }} {% endfor %}
+        </div>
+      </a>
+      {% endif %} {% endwith %} {% block head %}{% endblock %}
     </header>
 
     <!-- main page content goes in container -->
     <div>
-        <main class="text-center">
-            {% block main %}{% endblock %}
-        </main>
+      <main class="text-center">{% block main %}{% endblock %}</main>
     </div>
 
-    <footer class="container-fluid footer" data-aos="fade-up" data-aos-delay="100">
-        <div class="container py-5">
-            <div class="row">
-                <div class="col-12 col-md">
-                    <a href="{{url_for('main.index')}}" class="navbar-brand"><img src="{{url_for('static', filename='img/Umbella_logo.jpg')}}" alt="Umbella Logo" width="32"
-                            height="32"></a>
+    <footer
+      class="container-fluid footer"
+      data-aos="fade-up"
+      data-aos-delay="100"
+    >
+      <div class="container py-5">
+        <div class="row">
+          <div class="col-12 col-md">
+            <a href="{{url_for('main.index')}}" class="navbar-brand"
+              ><img
+                src="{{url_for('static', filename='img/Umbella_logo.jpg')}}"
+                alt="Umbella Logo"
+                width="32"
+                height="32"
+            /></a>
 
-                    <small class="d-block mb-3 text-secondary">© theUmbella 2020</small>
-                </div>
-                <div class="col-6 col-md">
-                    <h5>Style Series</h5>
-                    <ul class="list-unstyled text-small">
-                        {% for item in series%}
-                        <li><a class="text-secondary" href="{{ url_for('main.seriesUmbrellas', seriesid=item.id)}}">{{ item.name }}</a></li>
-                        {% endfor %}
-                    </ul>
-                </div>
-                <div class="col-6 col-md">
-                    <h5>Portrait</h5>
-                    <ul class="list-unstyled text-small">
-                        <li><a class="text-secondary" href="{{url_for('main.story')}}">the Umbella</a></li>
-                        <li><a class="text-secondary" target="blank"
-                                href="https://goo.gl/maps/i6cMz1xaAnk7Duir9">Locations</a></li>
-                        <li><a class="text-secondary" href="{{ url_for('main.privacy')}}">Privacy</a></li>
-                        <!-- <li><a class="text-secondary" href="#">Terms</a></li> -->
-                    </ul>
-                </div>
-                <div class="col-6 col-md">
-                    <h5>Music</h5>
-                    <ul class="list-unstyled text-small">
-                        <li>
-                            <audio controls >
-                                <source src="{{url_for('static', filename='sound/Avenged_Sevenfold_ Dear_God.m4a')}}" type="audio/ogg">
-                                <source src="{{url_for('static', filename='sound/Avenged_Sevenfold_ Dear_God.m4a')}}">
-                                Your browser does not support the audio element.
-                            </audio>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
+            <small class="d-block mb-3 text-secondary">© theUmbella 2020</small>
+          </div>
+          <div class="col-6 col-md">
+            <h5>Style Series</h5>
+            <ul class="list-unstyled text-small">
+              {% for item in series%}
+              <li>
+                <a
+                  class="text-secondary"
+                  href="{{ url_for('main.seriesUmbrellas', seriesid=item.id)}}"
+                  >{{ item.name }}</a
+                >
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+          <div class="col-6 col-md">
+            <h5>Portrait</h5>
+            <ul class="list-unstyled text-small">
+              <li>
+                <a class="text-secondary" href="{{url_for('main.story')}}"
+                  >the Umbella</a
+                >
+              </li>
+              <li>
+                <a
+                  class="text-secondary"
+                  target="blank"
+                  href="https://goo.gl/maps/i6cMz1xaAnk7Duir9"
+                  >Locations</a
+                >
+              </li>
+              <li>
+                <a class="text-secondary" href="{{ url_for('main.privacy')}}"
+                  >Privacy</a
+                >
+              </li>
+              <!-- <li><a class="text-secondary" href="#">Terms</a></li> -->
+            </ul>
+          </div>
+          <div class="col-6 col-md">
+            <h5>Music</h5>
+            <ul class="list-unstyled text-small">
+              <li>
+                <audio controls autoplay>
+                  <source
+                    src="{{url_for('static', filename='sound/Avenged_Sevenfold_ Dear_God.m4a')}}"
+                    type="audio/ogg"
+                  />
+                  <source
+                    src="{{url_for('static', filename='sound/Avenged_Sevenfold_ Dear_God.m4a')}}"
+                  />
+                  Your browser does not support the audio element.
+                </audio>
+              </li>
+            </ul>
+          </div>
         </div>
+      </div>
     </footer>
-
-
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
 
-        
     <!-- customised JS -->
     <script src="{{url_for('static', filename='js/theUmbella_product.js')}}"></script>
-    
+
     <!-- scrolling style -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init(); 
+      AOS.init();
     </script>
-
-</body>
-
+  </body>
 </html>
